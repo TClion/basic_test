@@ -36,7 +36,7 @@ class Mongo():
         loops = self.coll.find()
         for item in loops:
             print item
-
+    #排序
     def sort(self):
         loops = self.coll.find().sort('age', pymongo.DESCENDING)  #降序
         new_loops = self.coll.find().sort('age', pymongo.ASCENDING)  #升序
