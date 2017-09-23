@@ -33,8 +33,9 @@ class Mongo():
 
     #更新数据
     def update(self):
-        self.coll.update_many({'name': 'john'}, {'$set': {'age': '22'}})    #更新多条数据
-        self.coll.update({'name': 'john'}, {'$set': {'age': '22'}})         #更新一条数据
+        # self.coll.update_many({'name': 'john'}, {'$set': {'age': '22'}})    #更新多条数据
+        # self.coll.update({'name': 'john'}, {'$set': {'age': '25'}},multi=True)    #更新多条数据
+        self.coll.update({'name': 'john'}, {'$set': {'age': '25'}})         #更新一条数据
 
     #查找一条记录
     def find_one(self):
@@ -47,7 +48,7 @@ class Mongo():
         loops = self.coll.find()
         for item in loops:
             print item
-            
+
     #排序
     def sort(self):
         loops = self.coll.find().sort('age', pymongo.DESCENDING)  #降序
