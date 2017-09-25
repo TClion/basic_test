@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env python
 # coding=utf8
 
 # version:1.0
