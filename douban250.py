@@ -88,7 +88,7 @@ class spider():
         try:
             title = data.xpath('//h1/span[1]/text()')[0]
         except:
-            title = 'None'
+            return
         post = {
             'url': url,
             'title': title,
