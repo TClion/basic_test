@@ -63,6 +63,8 @@ class spider():
                     print 'ip list empty'
                     self.ip_lst = self.get_ip_lst_m()
         content = page.text
+        if u'呃...你想访问的页面不存在' in content:
+            return
         data = etree.HTML(content)
         print '%s parse successful' % url
         url_lst = data.xpath('//ol[@class="grid_view"]/li//div[@class="hd"]/a/@href')
@@ -70,7 +72,7 @@ class spider():
 
     #抓取详情页信息
     def parse(self, url):
-        if url in self.R.smembers('doubanbook') and self.data_coll.find_one({'url': url}):
+        if url in self.R.smembers('top250') and self.data_coll.find_one({'url': url}):
             return
         while True:
             try:
