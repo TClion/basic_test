@@ -38,7 +38,6 @@ class spider():
         self.info_url_db = self.db.infourl
         self.info_db = self.db.info
 
-        print("智联招聘查找，默认前5页")
         place = raw_input("请输入要查询的地区:")
         position = raw_input("请输入你要找的职位:")
         name = urllib.quote(place)              # 将地区变为url可识别的编码
